@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#180d1c">
+  <meta name="description" content="A little apology, a dinner invitation, and lots of love.">
+  <title>For My Baby ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #180d1c;
+      --pink: #ff8eae;
+      --rose: #ff5f91;
+      --cream: #fff3ee;
+      --muted: #d8bdc9;
+      --glass: rgba(255,255,255,.075);
+      --line: rgba(255,255,255,.14);
+    }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body {
+      min-height: 100svh; overflow-x: hidden; color: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      background:
+        radial-gradient(ellipse at 15% 15%, rgba(151,52,104,.32), transparent 42%),
+        radial-gradient(ellipse at 85% 85%, rgba(93,48,112,.34), transparent 42%),
+        linear-gradient(145deg, #180d1c, #281127 55%, #160d20);
+      display: grid; place-items: center; padding: 24px;
+    }
+    body::before {
+      content:""; position:fixed; inset:0; pointer-events:none; opacity:.13;
+      background-image: radial-gradient(#fff 0.7px, transparent .7px);
+      background-size: 25px 25px;
+    }
+    .glow { position:fixed; width:340px; height:340px; border-radius:50%; filter:blur(90px); opacity:.17; pointer-events:none; }
+    .glow.one { background:#ff4f87; top:-170px; left:-120px; }
+    .glow.two { background:#a65cff; right:-170px; bottom:-180px; }
+    .hearts { position:fixed; inset:0; overflow:hidden; pointer-events:none; z-index:0; }
+    .heart { position:absolute; bottom:-50px; color:rgba(255,142,174,.48); animation:floatUp linear forwards; }
+    @keyframes floatUp { to { transform:translateY(-115vh) rotate(25deg); opacity:0; } }
+    .shell { width:min(100%, 720px); position:relative; z-index:1; }
+    .topline { text-align:center; color:#e7b7ca; letter-spacing:.24em; text-transform:uppercase; font-size:.68rem; margin-bottom:18px; }
+    .card {
+      position:relative; overflow:hidden; text-align:center; padding:clamp(30px, 7vw, 64px) clamp(22px, 7vw, 68px);
+      border:1px solid var(--line); border-radius:30px;
+      background:linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.035));
+      box-shadow:0 28px 90px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.1);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter:blur(18px);
+      min-height:430px; display:flex; flex-direction:column; justify-content:center; align-items:center;
+    }
+    .card::before { content:""; position:absolute; width:280px; height:280px; border-radius:50%; border:1px solid rgba(255,142,174,.10); top:-190px; right:-110px; }
+    .card::after { content:""; position:absolute; width:220px; height:220px; border-radius:50%; border:1px solid rgba(255,142,174,.08); bottom:-160px; left:-100px; }
+    .content { position:relative; z-index:1; width:100%; animation:enter .55s cubic-bezier(.2,.8,.2,1) both; }
+    @keyframes enter { from { opacity:0; transform:translateY(16px) scale(.985); } to { opacity:1; transform:translateY(0) scale(1); } }
+    .eyebrow { color:var(--pink); font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; margin:0 0 20px; }
+    h1 { font-family:"Playfair Display", Georgia, serif; font-size:clamp(2.5rem, 8vw, 4.7rem); line-height:1.08; font-weight:600; margin:0 auto 20px; letter-spacing:-.035em; }
+    h1 em { color:var(--pink); font-weight:500; }
+    .message { color:var(--muted); font-size:clamp(1rem, 2.8vw, 1.16rem); line-height:1.8; max-width:510px; margin:0 auto 30px; }
+    .big-heart { font-size:3.5rem; line-height:1; margin-bottom:25px; display:inline-block; filter:drop-shadow(0 8px 22px rgba(255,95,145,.28)); animation:heartbeat 1.8s ease-in-out infinite; }
+    @keyframes heartbeat { 0%,100% { transform:scale(1); } 12% { transform:scale(1.12); } 24% { transform:scale(1); } 36% { transform:scale(1.08); } }
+    .buttons { display:flex; justify-content:center; gap:13px; flex-wrap:wrap; margin-top:8px; }
+    button {
+      appearance:none; border:0; cursor:pointer; font:700 .98rem "DM Sans",sans-serif;
+      border-radius:999px; padding:15px 27px; min-width:145px; transition:transform .2s, box-shadow .2s, background .2s;
+      -webkit-tap-highlight-color:transparent;
+    }
+    button:focus-visible { outline:3px solid #fff; outline-offset:4px; }
+    button:hover { transform:translateY(-3px); }
+    button:active { transform:translateY(0) scale(.98); }
+    .primary { color:#351321; background:linear-gradient(135deg, #ffb2c7, #ff6f9c); box-shadow:0 10px 28px rgba(255,95,145,.24); }
+    .primary:hover { box-shadow:0 14px 34px rgba(255,95,145,.38); }
+    .secondary { color:var(--cream); background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); }
+    .secondary:hover { background:rgba(255,255,255,.13); }
+    .progress { display:flex; justify-content:center; gap:7px; margin:20px 0 0; }
+    .dot { width:6px; height:6px; border-radius:20px; background:rgba(255,255,255,.24); transition:all .3s; }
+    .dot.active { width:22px; background:var(--pink); }
+    .footer { text-align:center; color:rgba(255,235,242,.48); font-size:.75rem; margin-top:18px; letter-spacing:.04em; }
+    .modal-backdrop { position:fixed; inset:0; background:rgba(9,4,12,.72); display:grid; place-items:center; padding:22px; z-index:5; animation:fade .2s ease; }
+    .modal { width:min(100%,390px); text-align:center; padding:32px 25px; border-radius:24px; border:1px solid var(--line); background:#29162b; box-shadow:0 25px 80px rgba(0,0,0,.5); }
+    .modal h2 { font:600 1.8rem "Playfair Display",serif; margin:0 0 10px; }
+    .modal p { color:var(--muted); line-height:1.65; margin:0 0 22px; }
+    .hidden { display:none !important; }
+    @media (max-width:520px) {
+      body { padding:15px; }
+      .topline { margin-bottom:13px; font-size:.61rem; }
+      .card { min-height: min(610px, calc(100svh - 105px)); border-radius:24px; padding:38px 23px; }
+      .message { line-height:1.7; }
+      .buttons { width:100%; gap:10px; }
+      button { min-width: min(100%, 132px); padding:14px 20px; }
+      .footer { margin-top:13px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow one"></div><div class="glow two"></div>
+  <div class="hearts" id="hearts" aria-hidden="true"></div>
+  <main class="shell">
+    <div class="topline">A little something, just for you</div>
+    <section class="card" aria-live="polite" aria-atomic="true">
+      <div class="content" id="screen"></div>
+    </section>
+    <div class="progress" id="progress" aria-label="Experience progress"></div>
+    <div class="footer">Made with all my love ❤️</div>
+  </main>
+
+  <div class="modal-backdrop hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="big-heart">🥺</div>
+      <h2 id="modalTitle">Awww baby...</h2>
+      <p id="modalText">You don't have the option to say No. Please click Yes. ❤️</p>
+      <button class="primary" id="modalOk">Okay, baby ❤️</button>
+    </div>
+  </div>
+
+  <script>
+    const screen = document.getElementById("screen");
+    const progress = document.getElementById("progress");
+    const modal = document.getElementById("modal");
+    const modalText = document.getElementById("modalText");
+    const modalOk = document.getElementById("modalOk");
+    let current = 0;
+
+    const pages = [
+      {
+        eyebrow: "For the most special person",
+        icon: "💗",
+        title: "Sorry <em>Baby</em>",
+        message: "I have a little something to tell you... and it comes straight from my heart.",
+        button: "Open my heart"
+      },
+      {
+        eyebrow: "From the bottom of my heart",
+        icon: "🥺",
+        title: "I'm really <em>sorry</em>",
+        message: "Sorry for not being with you on my birthday. I know I should have been there with you, and I wish things had been different. You deserved to have me by your side. I love you, baby.",
+        button: "Can I make it up to you?"
+      },
+      {
+        eyebrow: "One little plan",
+        icon: "🌹",
+        title: "Shall we go out for <em>dinner</em> today?",
+        message: "Just you and me, some good food, and a little time together. Let me make today special for us.",
+        choices: true
+      },
+      {
+        eyebrow: "It's a date!",
+        icon: "🥳",
+        title: "Yay! <em>I'm ready</em> for the dinner!",
+        message: "Let's go, baby! ❤️ I can't wait to spend this time with you.",
+        button: "Continue"
+      },
+      {
+        eyebrow: "A little thank you",
+        icon: "😘",
+        title: "Thanks, <em>baby</em>, for coming!",
+        message: "I loved spending this time with you. Every moment with you means so much to me.",
+        button: "Love you"
+      },
+      {
+        eyebrow: "One more little question",
+        icon: "🛕",
+        title: "Shall we go to the <em>temple</em> tomorrow morning?",
+        message: "Let's start tomorrow with blessings, peace, and you by my side. ❤️",
+        choices: true, temple: true
+      },
+      {
+        eyebrow: "My favourite answer",
+        icon: "💞",
+        title: "Love you, <em>baby!</em>",
+        message: "Tomorrow morning, you and me. More memories, more smiles, and a lifetime of love. ❤️",
+        button: "One last hug"
+      },
+      {
+        eyebrow: "No escaping our plans",
+        icon: "🥰",
+        title: "Babyyyyy! <em>We're going!</em>",
+        message: "We shall go to the temple tomorrow morning. Be ready! Love you so much, baby. ❤️",
+        button: "Send you a kiss"
+      },
+      {
+        eyebrow: "Always and forever",
+        icon: "💋",
+        title: "A million kisses <em>for you!</em>",
+        message: "Thank you for being my person. I love you today, tomorrow, and every day after that.",
+        button: "Start again"
+      }
+    ];
+
+    function render() {
+      const p = pages[current];
+      screen.innerHTML = `
+        <div class="big-heart">${p.icon}</div>
+        <p class="eyebrow">${p.eyebrow}</p>
+        <h1>${p.title}</h1>
+        <p class="message">${p.message}</p>
+        ${p.choices ? `
+          <div class="buttons">
+            <button class="primary" id="yesBtn">Yes ❤️</button>
+            <button class="secondary" id="noBtn">No 🙈</button>
+          </div>` : `
+          <div class="buttons">
+            <button class="primary" id="nextBtn">${p.button}</button>
+          </div>`}
+      `;
+      progress.innerHTML = pages.slice(0, 8).map((_, i) =>
+        `<span class="dot ${i === current ? "active" : ""}"></span>`).join("");
+
+      const next = document.getElementById("nextBtn");
+      if (next) next.addEventListener("click", () => {
+        if (current === 4) current = 5;
+        else if (current === 6) current = 8;
+        else if (current === 7) current = 8;
+        else if (current === 8) current = 0;
+        else current++;
+        render();
+      });
+
+      const yes = document.getElementById("yesBtn");
+      const no = document.getElementById("noBtn");
+      if (yes) yes.addEventListener("click", () => {
+        current = p.temple ? 6 : 3;
+        render();
+        burstHearts();
+      });
+      if (no) no.addEventListener("click", () => {
+        if (p.temple) {
+          current = 7;
+          render();
+          burstHearts();
+        } else {
+          modalText.textContent = "You don't have the option to say No. Please click Yes. ❤️";
+          modal.classList.remove("hidden");
+          modalOk.focus();
+        }
+      });
+    }
+
+    modalOk.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      document.getElementById("yesBtn")?.focus();
+    });
+    modal.addEventListener("click", e => {
+      if (e.target === modal) modal.classList.add("hidden");
+    });
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") modal.classList.add("hidden");
+    });
+
+    function addHeart() {
+      const host = document.getElementById("hearts");
+      const el = document.createElement("span");
+      el.className = "heart";
+      el.textContent = ["♡","♥","❤","✧"][Math.floor(Math.random()*4)];
+      el.style.left = Math.random()*100 + "%";
+      el.style.fontSize = (12 + Math.random()*20) + "px";
+      el.style.animationDuration = (8 + Math.random()*9) + "s";
+      host.appendChild(el);
+      setTimeout(() => el.remove(), 18000);
+    }
+    function burstHearts() { for (let i=0; i<18; i++) setTimeout(addHeart, i*65); }
+    setInterval(addHeart, 850);
+    render();
+  </script>
+</body>
+</html>
